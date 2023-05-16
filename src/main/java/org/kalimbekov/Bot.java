@@ -101,7 +101,7 @@ public class Bot extends TelegramLongPollingBot {
                 if (variant > 0 && variant < 8) { // Valid variant number
                     state.setVariant(variant);
                     sendImage(user.getId(), "assets/images/" + state.getVariant() + ".png",
-                            "Enter real numbers for " + state.getNeededVariables() +
+                            "Enter real number(s) for " + state.getNeededVariables() +
                                     " accordingly, separated by spaces");
                 } else {
                     throw new NumberFormatException();
@@ -133,7 +133,7 @@ public class Bot extends TelegramLongPollingBot {
                     sendMenu(user.getId(), "Pick a variant", this.mainMenuReplyKeyboardMarkup);
                 }
             } catch (NumberFormatException e) {
-                sendText(user.getId(), "Enter " + state.getLength() + " real numbers " +
+                sendText(user.getId(), "Enter " + state.getLength() + " real number(s) " +
                         "separated by spaces");
             }
         }
