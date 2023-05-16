@@ -90,6 +90,8 @@ public class Bot extends TelegramLongPollingBot {
                 sendImage(user.getId(), "assets/images/variants.png", "");
                 sendMenu(user.getId(), "Pick a variant", this.mainMenuReplyKeyboardMarkup);
                 state.setVariant(0);
+            } else if (messageText.equalsIgnoreCase("/source")) {
+                sendText(user.getId(), "https://github.com/ssstroke/math_bot");
             } else {
                 sendText(user.getId(), """
                         "/start" is the only available command
